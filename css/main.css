@@ -1,0 +1,81 @@
+/* apply a background colour to the whole page (or the body tag) */
+body{
+    background-color: beige;
+}
+
+/* target all paragraphs to be the same colour 
+CSS has a specificity of 0001 - one tag  */
+p, h2{
+    color: coral;
+}
+
+/* targe the paragraph specifically inside the footer 
+CSS has a specificity of 0002 - two tags */
+footer p{
+    color: saddlebrown;
+    font-size:10px;
+}
+/* target an element based on its class (using the class larger) - use a dot
+a class can be used on multiple elements on a page
+CSS specigicity of 0010 - one class */
+.larger{
+    font-size:24px;
+}
+
+/* target an element based on its ID - use a #
+an ID should be unique (only one element on the page should have it)
+CSS specificity of 0010 - one ID */
+#play{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* use an attribute selector to target only .jpg images
+$= means 'ends with' so we are looking for image tags whose source ends with jpg. */
+img[src$="jpg"]{ 
+    width: 200px;
+}
+
+/* pseudo classes can be used to target the states of elements - for example the 'visited' state
+of an anchor tag */
+a:visited{
+    color: seagreen;
+}
+/* while only links have a visited state, any element can have a hover state */
+a:hover{
+    color: sienna;
+}
+
+/* use a pseudo class to target an element based on its position inside another element 
+can do last-child, first-child, nth-child() */
+p:last-child{
+    font-style:italic;
+}
+
+/* using nth-child we can style multiple elements based on their position, based on a fromula
+nth-child(5) - will
+nth-child(2n) - does every other element starting with the second
+nth-child(2n-1) - does every other element starting with the first */
+li:nth-child(2n-1){
+    background-color: powderblue;
+}
+
+/* inline vs block element */
+/* section is a block element - maenig it takes up the whole line by default and pushes
+other elements down to the next line */
+section{
+    width:400px;
+    height:200px;
+    background-color: steelblue;
+}
+nav{
+    /* by default, a block element takes up the width of the page (or the element its inside of) */
+    background-color: teal;
+}
+
+span{
+    /* inline elements can't have a width and height, so your browser will ignore all these properties */
+    width:100px;
+    height:100px;
+    background-color: thistle;
+}
